@@ -1,0 +1,13 @@
+# See: man pkg-config
+prefix=/Users/chetan/Desktop/Spring 2025/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/.conda
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: Python
+Description: Build a C extension for Python
+Requires:
+Version: 3.9
+Libs.private: -ldl   -framework CoreFoundation
+Libs:
+Cflags: -I${includedir}/python3.9
