@@ -3,6 +3,7 @@ import torch
 import numpy as np
 from PIL import Image
 from utils import UNet, SegmentationTransform
+import time
 
 
 class LiveSegmenter:
@@ -60,14 +61,17 @@ class LiveSegmenter:
                 print("[WARNING] Failed to read frame.")
                 break
 
+            t0 = time.time()
             mask = self._segment_frame(frame)
+            t1 = time.time()
             combined = np.hstack((frame, mask))
             cv2.imshow("Raw (left) | Segmentation (right)", combined)
+            print("Image Processing Time: {:.3f}".format(t1-t0))
 
             # Write the combined frame to the output video
             out.write(combined)
 
-            if cv2.waitKey(30) & 0xFF == ord("q"):
+            if cv2.waitKey(1) & 0xFF == ord("q"):
                 break
 
         self.cap.release()
@@ -76,7 +80,7 @@ class LiveSegmenter:
         print(f"[INFO] Stream ended. Segmented video saved to {output_path}")
 
 if __name__ == "__main__":
-    checkpoint_path = "/home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/Saved Models/test2.pth"
-    video_source = "/home/chetan/Downloads/left.mp4"
+    checkpoint_path ="/Users/chetan/Desktop/Spring 2025/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/Saved Models/test2.pth"
+    video_source = "/Users/chetan/Downloads/left.mp4"
     segmenter = LiveSegmenter(checkpoint_path, video_source=video_source)
     segmenter.run()
