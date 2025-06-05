@@ -1,0 +1,42 @@
+{
+  "os": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+  "python": "CPython 3.13.3",
+  "startedAt": "2025-06-05T04:12:21.046601Z",
+  "program": "/home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/main.py",
+  "codePath": "UNet/main.py",
+  "git": {
+    "remote": "git@github.com:chetanreddyn/Video-Segmentation-for-Autonomous-Manipulation.git",
+    "commit": "5565bff52ac0b507f9f8f996ea5d54de86542d5d"
+  },
+  "email": "chetanreddy1412@gmail.com",
+  "root": "/home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet",
+  "host": "chetan-legion-5",
+  "executable": "/home/chetan/anaconda3/envs/cs231n/bin/python",
+  "codePathLocal": "main.py",
+  "cpu_count": 24,
+  "cpu_count_logical": 32,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "128415297536",
+      "used": "66863284224"
+    }
+  },
+  "memory": {
+    "total": "33339908096"
+  },
+  "cpu": {
+    "count": 24,
+    "countLogical": 32
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "memoryTotal": "8585740288",
+      "cudaCores": 3072,
+      "architecture": "Ada"
+    }
+  ],
+  "cudaVersion": "12.2"
+}

@@ -1,0 +1,16 @@
+Loaded model weights from /home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/Saved Models/test.pth
+Epoch [1/100], Training Loss: 0.0541
+Epoch [2/100], Training Loss: 0.0205
+Epoch [3/100], Training Loss: 0.0159
+Epoch [4/100], Training Loss: 0.0142
+Traceback (most recent call last):
+  File "/home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/main.py", line 108, in <module>
+    pipeline.train()
+    ~~~~~~~~~~~~~~^^
+  File "/home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/main.py", line 78, in train
+    self.trainer.train(num_epochs=self.training_config["num_epochs"], checkpoint_path=self.save_checkpoint_path)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/utils.py", line 122, in train
+    epoch_loss += loss.item()
+                  ~~~~~~~~~^^
+KeyboardInterrupt

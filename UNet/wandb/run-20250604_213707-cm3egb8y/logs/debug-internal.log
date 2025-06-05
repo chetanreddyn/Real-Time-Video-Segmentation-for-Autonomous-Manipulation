@@ -1,0 +1,7 @@
+{"time":"2025-06-04T21:37:07.11202821-07:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/wandb/run-20250604_213707-cm3egb8y/logs/debug-core.log"}
+{"time":"2025-06-04T21:37:07.287013364-07:00","level":"INFO","msg":"created new stream","id":"cm3egb8y"}
+{"time":"2025-06-04T21:37:07.287033724-07:00","level":"INFO","msg":"stream: started","id":"cm3egb8y"}
+{"time":"2025-06-04T21:37:07.287114656-07:00","level":"INFO","msg":"writer: Do: started","stream_id":"cm3egb8y"}
+{"time":"2025-06-04T21:37:07.287144455-07:00","level":"INFO","msg":"sender: started","stream_id":"cm3egb8y"}
+{"time":"2025-06-04T21:37:07.28719377-07:00","level":"INFO","msg":"handler: started","stream_id":"cm3egb8y"}
+{"time":"2025-06-04T21:37:07.488669781-07:00","level":"INFO","msg":"Starting system monitor"}

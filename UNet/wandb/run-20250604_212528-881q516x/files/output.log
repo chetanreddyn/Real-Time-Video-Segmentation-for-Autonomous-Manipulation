@@ -1,0 +1,27 @@
+Validation Accuracy: 0.9098, Dice Score: 0.0000
+Validation Accuracy: 0.9092, Dice Score: 0.0000
+Entering Debug Mode inside predict_single_image()
+0.014819860458374023
+Traceback (most recent call last):
+  File "/home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/main.py", line 110, in <module>
+    pipeline.predict_sample_image("0000.jpg")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/main.py", line 87, in predict_sample_image
+    predict_single_image(self.model, sample_image_path, SegmentationTransform(), self.device)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/utils.py", line 217, in predict_single_image
+    plt.show()
+    ~~~~~~~~^^
+  File "/home/chetan/anaconda3/envs/cs231n/lib/python3.13/site-packages/matplotlib/pyplot.py", line 614, in show
+    return _get_backend_mod().show(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/chetan/anaconda3/envs/cs231n/lib/python3.13/site-packages/matplotlib/backend_bases.py", line 3548, in show
+    cls.mainloop()
+    ~~~~~~~~~~~~^^
+  File "/home/chetan/anaconda3/envs/cs231n/lib/python3.13/site-packages/matplotlib/backends/_backend_tk.py", line 544, in start_main_loop
+    first_manager.window.mainloop()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/chetan/anaconda3/envs/cs231n/lib/python3.13/tkinter/__init__.py", line 1599, in mainloop
+    self.tk.mainloop(n)
+    ~~~~~~~~~~~~~~~~^^^
+KeyboardInterrupt

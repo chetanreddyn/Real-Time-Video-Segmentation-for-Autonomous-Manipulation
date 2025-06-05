@@ -1,0 +1,15 @@
+{"time":"2025-06-04T21:19:21.190659518-07:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/wandb/run-20250604_211921-ybo86uui/logs/debug-core.log"}
+{"time":"2025-06-04T21:19:21.378591974-07:00","level":"INFO","msg":"created new stream","id":"ybo86uui"}
+{"time":"2025-06-04T21:19:21.378610171-07:00","level":"INFO","msg":"stream: started","id":"ybo86uui"}
+{"time":"2025-06-04T21:19:21.37863632-07:00","level":"INFO","msg":"writer: Do: started","stream_id":"ybo86uui"}
+{"time":"2025-06-04T21:19:21.378739667-07:00","level":"INFO","msg":"handler: started","stream_id":"ybo86uui"}
+{"time":"2025-06-04T21:19:21.378749601-07:00","level":"INFO","msg":"sender: started","stream_id":"ybo86uui"}
+{"time":"2025-06-04T21:19:21.500861163-07:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-04T21:23:50.567728511-07:00","level":"INFO","msg":"stream: closing","id":"ybo86uui"}
+{"time":"2025-06-04T21:23:50.567756056-07:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-04T21:23:50.567819028-07:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-04T21:23:51.03160686-07:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-04T21:23:51.238674692-07:00","level":"INFO","msg":"handler: closed","stream_id":"ybo86uui"}
+{"time":"2025-06-04T21:23:51.238711227-07:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ybo86uui"}
+{"time":"2025-06-04T21:23:51.238736472-07:00","level":"INFO","msg":"sender: closed","stream_id":"ybo86uui"}
+{"time":"2025-06-04T21:23:51.238799475-07:00","level":"INFO","msg":"stream: closed","id":"ybo86uui"}

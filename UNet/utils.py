@@ -10,6 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pdb
 import time
+import wandb
 
 # Custom Dataset
 class SegmentationDataset(Dataset):
@@ -87,9 +88,11 @@ class UNet(nn.Module):
 
 # Trainer
 class UNetTrainer:
-    def __init__(self, model, train_loader, device):
+    def __init__(self, model, train_loader, val_loader, device, wandb_log):
         self.model = model.to(device)
+        self.wandb_log = wandb_log
         self.train_loader = train_loader
+        self.val_loader = val_loader
         self.device = device
         self.criterion = nn.BCELoss()
         self.optimizer = optim.Adam(model.parameters(), lr=1e-4)
@@ -104,11 +107,14 @@ class UNetTrainer:
             print(f"No checkpoint found at {checkpoint_path}, starting fresh.")
 
 
-    def train(self, num_epochs=10, checkpoint_path = None):
-        self.model.train()
+    def train(self, num_epochs=10, checkpoint_path=None, validate_val_every=10):
         for epoch in range(num_epochs):
-            epoch_loss = 0
+            # Training phase
+            self.model.train()
+            train_loss = 0
+            train_dice = 0
             num_batches = 0
+
             for images, masks in self.train_loader:
                 images, masks = images.to(self.device), masks.to(self.device)
                 outputs = self.model(images)
@@ -117,19 +123,72 @@ class UNetTrainer:
                 self.optimizer.zero_grad()
                 loss.backward()
                 self.optimizer.step()
-                epoch_loss += loss.item()
-                num_batches+=1
-            
-            epoch_loss = epoch_loss/num_batches
-            
-            print(f"Epoch [{epoch+1}/{num_epochs}], Training Loss: {epoch_loss:.4f}")
-            # pdb.set_trace()
+
+                # Compute Dice score
+                preds = (outputs > 0.5).float()
+                dice = self.dice_score(preds, masks)
+
+                train_loss += loss.item()
+                train_dice += dice.item()
+                num_batches += 1
+
+            avg_train_loss = train_loss / num_batches
+            avg_train_dice = train_dice / num_batches
+
+            print(f"Epoch [{epoch+1}/{num_epochs}], Training Loss: {avg_train_loss:.4f}, Training Dice: {avg_train_dice:.4f}")
+
+            # Log training metrics to wandb
+            if self.wandb_log:
+                wandb.log({
+                    "epoch": epoch + 1,
+                    "train_loss": avg_train_loss,
+                    "train_dice": avg_train_dice
+                })
+
+            # Validation phase (every `validate_every` epochs)
+            if (epoch + 1) % validate_val_every == 0:
+                self.model.eval()
+                val_loss = 0
+                val_dice = 0
+                num_batches = 0
+
+                with torch.no_grad():
+                    for images, masks in self.val_loader:
+                        images, masks = images.to(self.device), masks.to(self.device)
+                        outputs = self.model(images)
+                        loss = self.criterion(outputs, masks)
+
+                        # Compute Dice score
+                        preds = (outputs > 0.5).float()
+                        dice = self.dice_score(preds, masks)
+
+                        val_loss += loss.item()
+                        val_dice += dice.item()
+                        num_batches += 1
+
+                avg_val_loss = val_loss / num_batches
+                avg_val_dice = val_dice / num_batches
+
+                print(f"Epoch [{epoch+1}/{num_epochs}], Validation Loss: {avg_val_loss:.4f}, Validation Dice: {avg_val_dice:.4f}")
+
+                # Log validation metrics to wandb
+                if self.wandb_log:
+                    wandb.log({
+                        "epoch": epoch + 1,
+                        "val_loss": avg_val_loss,
+                        "val_dice": avg_val_dice
+                    })
 
         if checkpoint_path:
             # Save model at the end of training
             torch.save(self.model.state_dict(), checkpoint_path)
             print(f"Model weights saved to {checkpoint_path}")
-
+            
+    @staticmethod
+    def dice_score(pred, target, epsilon=1e-6):
+        intersection = (pred * target).sum()
+        union = pred.sum() + target.sum()
+        return (2. * intersection + epsilon) / (union + epsilon)
 
 class Evaluator:
     def __init__(self, model, device):

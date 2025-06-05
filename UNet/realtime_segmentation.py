@@ -55,6 +55,7 @@ class LiveSegmenter:
         out = cv2.VideoWriter(output_path, fourcc, fps, (frame_width * 2, frame_height))
 
         print("[INFO] Starting live segmentation. Press 'q' to quit.")
+        frame_num = 0
         while True:
             ret, frame = self.cap.read()
             if not ret:
@@ -66,10 +67,11 @@ class LiveSegmenter:
             t1 = time.time()
             combined = np.hstack((frame, mask))
             cv2.imshow("Raw (left) | Segmentation (right)", combined)
-            print("Image Processing Time: {:.3f}".format(t1-t0))
+            print("Image Processing Time: {:.3f} | Frame Number: {}".format(t1-t0, frame_num))
 
             # Write the combined frame to the output video
             out.write(combined)
+            frame_num += 1
 
             if cv2.waitKey(1) & 0xFF == ord("q"):
                 break
@@ -80,7 +82,7 @@ class LiveSegmenter:
         print(f"[INFO] Stream ended. Segmented video saved to {output_path}")
 
 if __name__ == "__main__":
-    checkpoint_path ="/Users/chetan/Desktop/Spring 2025/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/Saved Models/test2.pth"
-    video_source = "/Users/chetan/Downloads/left.mp4"
+    checkpoint_path ="/home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/Saved Models/working.pth"
+    video_source = "/home/chetan/Downloads/left.mp4"
     segmenter = LiveSegmenter(checkpoint_path, video_source=video_source)
     segmenter.run()

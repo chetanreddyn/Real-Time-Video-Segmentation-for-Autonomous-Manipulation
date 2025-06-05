@@ -1,0 +1,12 @@
+Checkpoint is None, starting a fresh model
+Epoch [1/10], Training Loss: 0.6093
+Epoch [2/10], Training Loss: 0.3172
+Epoch [3/10], Training Loss: 0.2764
+Epoch [4/10], Training Loss: 0.2695
+Epoch [5/10], Training Loss: 0.2646
+Epoch [6/10], Training Loss: 0.2567
+Epoch [7/10], Training Loss: 0.2444
+Epoch [8/10], Training Loss: 0.2269
+Epoch [9/10], Training Loss: 0.2081
+Epoch [10/10], Training Loss: 0.1859
+Model weights saved to /home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/Saved Models/test.pth

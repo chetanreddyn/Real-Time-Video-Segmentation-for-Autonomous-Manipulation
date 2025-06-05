@@ -1,0 +1,15 @@
+{"time":"2025-06-04T21:18:13.090533756-07:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/wandb/run-20250604_211813-v99obtol/logs/debug-core.log"}
+{"time":"2025-06-04T21:18:13.281069294-07:00","level":"INFO","msg":"created new stream","id":"v99obtol"}
+{"time":"2025-06-04T21:18:13.281119471-07:00","level":"INFO","msg":"stream: started","id":"v99obtol"}
+{"time":"2025-06-04T21:18:13.281211635-07:00","level":"INFO","msg":"writer: Do: started","stream_id":"v99obtol"}
+{"time":"2025-06-04T21:18:13.281302903-07:00","level":"INFO","msg":"handler: started","stream_id":"v99obtol"}
+{"time":"2025-06-04T21:18:13.281386715-07:00","level":"INFO","msg":"sender: started","stream_id":"v99obtol"}
+{"time":"2025-06-04T21:18:13.414940938-07:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-04T21:18:40.479038612-07:00","level":"INFO","msg":"stream: closing","id":"v99obtol"}
+{"time":"2025-06-04T21:18:40.479066823-07:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-04T21:18:40.479116576-07:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-04T21:18:40.869925728-07:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-04T21:18:40.994258977-07:00","level":"INFO","msg":"handler: closed","stream_id":"v99obtol"}
+{"time":"2025-06-04T21:18:40.994330613-07:00","level":"INFO","msg":"writer: Close: closed","stream_id":"v99obtol"}
+{"time":"2025-06-04T21:18:40.994355489-07:00","level":"INFO","msg":"sender: closed","stream_id":"v99obtol"}
+{"time":"2025-06-04T21:18:40.994459107-07:00","level":"INFO","msg":"stream: closed","id":"v99obtol"}

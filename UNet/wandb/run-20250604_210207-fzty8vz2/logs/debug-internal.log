@@ -1,0 +1,15 @@
+{"time":"2025-06-04T21:02:07.179248859-07:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/wandb/run-20250604_210207-fzty8vz2/logs/debug-core.log"}
+{"time":"2025-06-04T21:02:07.361442243-07:00","level":"INFO","msg":"created new stream","id":"fzty8vz2"}
+{"time":"2025-06-04T21:02:07.361516156-07:00","level":"INFO","msg":"stream: started","id":"fzty8vz2"}
+{"time":"2025-06-04T21:02:07.361686095-07:00","level":"INFO","msg":"writer: Do: started","stream_id":"fzty8vz2"}
+{"time":"2025-06-04T21:02:07.361739183-07:00","level":"INFO","msg":"sender: started","stream_id":"fzty8vz2"}
+{"time":"2025-06-04T21:02:07.361839144-07:00","level":"INFO","msg":"handler: started","stream_id":"fzty8vz2"}
+{"time":"2025-06-04T21:02:07.632298986-07:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-04T21:02:09.811696644-07:00","level":"INFO","msg":"stream: closing","id":"fzty8vz2"}
+{"time":"2025-06-04T21:02:09.811748199-07:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-04T21:02:09.811834234-07:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-04T21:02:10.205475984-07:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-04T21:02:10.387832419-07:00","level":"INFO","msg":"handler: closed","stream_id":"fzty8vz2"}
+{"time":"2025-06-04T21:02:10.387871794-07:00","level":"INFO","msg":"writer: Close: closed","stream_id":"fzty8vz2"}
+{"time":"2025-06-04T21:02:10.387906826-07:00","level":"INFO","msg":"sender: closed","stream_id":"fzty8vz2"}
+{"time":"2025-06-04T21:02:10.387983829-07:00","level":"INFO","msg":"stream: closed","id":"fzty8vz2"}

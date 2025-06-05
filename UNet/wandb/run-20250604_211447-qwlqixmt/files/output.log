@@ -1,0 +1,12 @@
+Checkpoint is None, starting a fresh model
+Traceback (most recent call last):
+  File "/home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/main.py", line 103, in <module>
+    pipeline.train()
+    ~~~~~~~~~~~~~~^^
+  File "/home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/main.py", line 75, in train
+    self.trainer.train(num_epochs=self.training_config["num_epochs"], checkpoint_path=self.save_checkpoint_path)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chetan/Desktop/Acads/CS231n/Project/Video-Segmentation-for-Autonomous-Manipulation/UNet/utils.py", line 128, in train
+    self.wandb.log({"epoch": epoch + 1, "loss": epoch_loss})
+    ^^^^^^^^^^
+AttributeError: 'UNetTrainer' object has no attribute 'wandb'
