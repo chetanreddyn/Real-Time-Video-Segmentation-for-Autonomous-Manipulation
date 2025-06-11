@@ -1,4 +1,5 @@
 # Real Time Video-Segmentation-for-Autonomous-Manipulation
+## Abstract
 We propose a real-time semantic segmentation framework
 for robotic surgical scenes, enabling downstream
 imitation learning for autonomous robotic assistance. Our
@@ -10,7 +11,7 @@ U-Net architecture on them, achieving near-equivalent
 segmentation performance with 30Hz inference speed,
 suitable for closed-loop robotic control.
 
-Model Pipeline
+## Model Pipeline
 **Figure 1: Pseudo-Ground-Truth Generation using SAM2**  
 <img width="400" alt="SAM2" src="https://github.com/user-attachments/assets/f6ae3529-fdb3-4ce7-b23d-6e821b29eeed" />
 
@@ -20,7 +21,7 @@ Model Pipeline
 **Figure 3: Real-Time Robot Perception Action Loop**  
 <img width="400" alt="Robot Loop" src="https://github.com/user-attachments/assets/f33ff8d1-f7e7-464f-80da-5b9c29d8f843" />
 
-Results:
+## Results:
 Real Time Segmentation at 30 Hz Using UNet trained on SAM2 outputs:
 
 https://github.com/user-attachments/assets/16ce64cb-83c8-4de6-8a5d-0fc8c2055da5
